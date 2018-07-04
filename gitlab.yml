@@ -1,0 +1,6 @@
+---
+- name: Gitlab
+  hosts: devops
+  roles:
+    - ansible-role-gitlab
+...

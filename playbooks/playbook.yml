@@ -1,0 +1,14 @@
+---
+- name: Instala pacotes padrao
+  hosts: devops docker
+  tasks: 
+    - name: Pacotes
+      apt:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - sl
+        - ccze
+        - dnsutils
+        - cowsay 
+...

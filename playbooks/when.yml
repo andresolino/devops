@@ -1,0 +1,13 @@
+---
+- name: exemplo uso when
+  hosts: all
+
+  tasks:
+    - name: testando o arquivo de profile
+      command: test -f /etc/profile
+      register: result
+      ignore_erros: yes
+    - name: configurando variavel dexter
+      shell: echo "export DEXTER=/opt/dexter" > /etc/profile.d/dexter
+      when: result.rc == 0  
+... 

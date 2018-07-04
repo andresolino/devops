@@ -1,0 +1,13 @@
+- name: Instalar o puppet - Debian like
+  apt:
+    name: puppet-agent
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Debian'
+
+
+- name: Instalar o puppet - RedHat like
+  yum:
+    name: puppet-agent
+    state: present
+  when: ansible_os_family == 'RedHat'
